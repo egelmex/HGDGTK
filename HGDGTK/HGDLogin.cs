@@ -9,6 +9,19 @@ namespace HGDGTK
 			set;
 		}
 		
+		public string hostname {
+			get { return hostname_cmd.ActiveText; }
+		}
+		
+		public string username {
+			get { return username_cmd.ActiveText; }
+			
+		}
+		
+		public string password {
+			get { return password_txt.Text; }
+		}
+		
 		protected virtual void OnButtonCancelClicked (object sender, System.EventArgs e)
 		{
 			ok = false;

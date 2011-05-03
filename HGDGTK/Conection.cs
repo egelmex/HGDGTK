@@ -54,7 +54,6 @@ namespace HGDGTK
 			this.hostname = hostname;
 			this.username = username;
 			this.password = password;
-			connect ();
 		}
 
 		public void encrypt ()

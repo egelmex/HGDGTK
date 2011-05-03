@@ -7,7 +7,7 @@ namespace HGDGTK
 		//new TargetEntry()
 		private static TargetEntry[] targetEntry = new TargetEntry[] {  };
 
-
+		Connection c;
 
 		public MainWindow () : base(Gtk.WindowType.Toplevel)
 		{
@@ -18,6 +18,12 @@ namespace HGDGTK
 			win2.Run();
 			if (win2.ok == true) {
 				this.Show();
+				c = new Connection(win2.hostname, win2.username, win2.password);
+				c.Changed += delegate(object sender, EventArgs e) {
+					SendChangedArgs ee = (SendChangedArgs) e;
+					Console.WriteLine(ee.filename + ee.percentage);
+				};
+				c.connect();
 			} else {
 				this.Hide();
 				Console.WriteLine("Should close there");

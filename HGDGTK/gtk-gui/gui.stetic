@@ -87,7 +87,6 @@
                 <property name="MemberName" />
                 <property name="LocalOnly">False</property>
                 <property name="SelectMultiple">True</property>
-                <property name="ShowHidden">True</property>
                 <property name="DoOverwriteConfirmation">True</property>
               </widget>
               <packing>
@@ -137,7 +136,7 @@
       </widget>
     </child>
   </widget>
-  <widget class="Gtk.Dialog" id="HGDGTK.HGDLogin" design-size="400 182">
+  <widget class="Gtk.Dialog" id="HGDGTK.HGDLogin" design-size="400 185">
     <property name="MemberName" />
     <property name="WindowPosition">CenterOnParent</property>
     <property name="Modal">True</property>
@@ -158,7 +157,7 @@
             <property name="ColumnSpacing">6</property>
             <property name="BorderWidth">9</property>
             <child>
-              <widget class="Gtk.ComboBoxEntry" id="comboboxentry1">
+              <widget class="Gtk.ComboBoxEntry" id="hostname_cmd">
                 <property name="MemberName" />
                 <property name="IsTextCombo">True</property>
                 <property name="Items" translatable="yes" />
@@ -169,52 +168,6 @@
                 <property name="AutoSize">False</property>
                 <property name="YOptions">Fill</property>
                 <property name="XExpand">True</property>
-                <property name="XFill">True</property>
-                <property name="XShrink">False</property>
-                <property name="YExpand">False</property>
-                <property name="YFill">True</property>
-                <property name="YShrink">False</property>
-              </packing>
-            </child>
-            <child>
-              <widget class="Gtk.ComboBoxEntry" id="comboboxentry2">
-                <property name="MemberName" />
-                <property name="IsTextCombo">True</property>
-                <property name="Items" translatable="yes" />
-              </widget>
-              <packing>
-                <property name="TopAttach">1</property>
-                <property name="BottomAttach">2</property>
-                <property name="LeftAttach">1</property>
-                <property name="RightAttach">2</property>
-                <property name="AutoSize">True</property>
-                <property name="XOptions">Fill</property>
-                <property name="YOptions">Fill</property>
-                <property name="XExpand">False</property>
-                <property name="XFill">True</property>
-                <property name="XShrink">False</property>
-                <property name="YExpand">False</property>
-                <property name="YFill">True</property>
-                <property name="YShrink">False</property>
-              </packing>
-            </child>
-            <child>
-              <widget class="Gtk.Entry" id="entry3">
-                <property name="MemberName" />
-                <property name="CanFocus">True</property>
-                <property name="IsEditable">True</property>
-                <property name="Visibility">False</property>
-                <property name="InvisibleChar">●</property>
-              </widget>
-              <packing>
-                <property name="TopAttach">2</property>
-                <property name="BottomAttach">3</property>
-                <property name="LeftAttach">1</property>
-                <property name="RightAttach">2</property>
-                <property name="AutoSize">True</property>
-                <property name="XOptions">Fill</property>
-                <property name="YOptions">Fill</property>
-                <property name="XExpand">False</property>
                 <property name="XFill">True</property>
                 <property name="XShrink">False</property>
                 <property name="YExpand">False</property>
@@ -277,6 +230,52 @@
                 <property name="YShrink">False</property>
               </packing>
             </child>
+            <child>
+              <widget class="Gtk.Entry" id="password_txt">
+                <property name="MemberName" />
+                <property name="CanFocus">True</property>
+                <property name="IsEditable">True</property>
+                <property name="Visibility">False</property>
+                <property name="InvisibleChar">●</property>
+              </widget>
+              <packing>
+                <property name="TopAttach">2</property>
+                <property name="BottomAttach">3</property>
+                <property name="LeftAttach">1</property>
+                <property name="RightAttach">2</property>
+                <property name="AutoSize">True</property>
+                <property name="XOptions">Fill</property>
+                <property name="YOptions">Fill</property>
+                <property name="XExpand">False</property>
+                <property name="XFill">True</property>
+                <property name="XShrink">False</property>
+                <property name="YExpand">False</property>
+                <property name="YFill">True</property>
+                <property name="YShrink">False</property>
+              </packing>
+            </child>
+            <child>
+              <widget class="Gtk.ComboBoxEntry" id="username_cmd">
+                <property name="MemberName" />
+                <property name="IsTextCombo">True</property>
+                <property name="Items" translatable="yes" />
+              </widget>
+              <packing>
+                <property name="TopAttach">1</property>
+                <property name="BottomAttach">2</property>
+                <property name="LeftAttach">1</property>
+                <property name="RightAttach">2</property>
+                <property name="AutoSize">True</property>
+                <property name="XOptions">Fill</property>
+                <property name="YOptions">Fill</property>
+                <property name="XExpand">False</property>
+                <property name="XFill">True</property>
+                <property name="XShrink">False</property>
+                <property name="YExpand">False</property>
+                <property name="YFill">True</property>
+                <property name="YShrink">False</property>
+              </packing>
+            </child>
           </widget>
           <packing>
             <property name="Position">0</property>
@@ -286,7 +285,7 @@
           </packing>
         </child>
         <child>
-          <widget class="Gtk.CheckButton" id="checkbutton1">
+          <widget class="Gtk.CheckButton" id="autologin">
             <property name="MemberName" />
             <property name="CanFocus">True</property>
             <property name="Label" translatable="yes">auto login</property>
