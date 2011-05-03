@@ -1,0 +1,17 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" ctype="Workspace" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="HGDLogin.cs" ctype="Workbench">
+    <Files>
+      <File FileName="Main.cs" Line="16" Column="1" />
+      <File FileName="MainWindow.cs" Line="25" Column="4" />
+      <File FileName="HGDLogin.cs" Line="22" Column="4" />
+      <File FileName="Conection.cs" Line="216" Column="18" />
+      <File FileName="Song.cs" Line="35" Column="4" />
+      <File FileName="Assembly Browser" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches ctype="PinnedWatchStore" />
+</Properties>

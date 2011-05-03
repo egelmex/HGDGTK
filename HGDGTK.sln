@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HGDGTK", "HGDGTK\HGDGTK.csproj", "{830993BB-EECC-4C54-88D8-705D3B7877D7}"
+EndProject
+Project("{9344bdbb-3e7f-41fc-a0dd-8665d75ee146}") = "Packages", "Packages.mdproj", "{01FB63E5-2C50-4286-B1DC-E9BC244D6B25}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{01FB63E5-2C50-4286-B1DC-E9BC244D6B25}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{01FB63E5-2C50-4286-B1DC-E9BC244D6B25}.Release|x86.ActiveCfg = Release|Any CPU
+		{830993BB-EECC-4C54-88D8-705D3B7877D7}.Debug|x86.ActiveCfg = Debug|x86
+		{830993BB-EECC-4C54-88D8-705D3B7877D7}.Debug|x86.Build.0 = Debug|x86
+		{830993BB-EECC-4C54-88D8-705D3B7877D7}.Release|x86.ActiveCfg = Release|x86
+		{830993BB-EECC-4C54-88D8-705D3B7877D7}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = HGDGTK\HGDGTK.csproj
+	EndGlobalSection
+EndGlobal

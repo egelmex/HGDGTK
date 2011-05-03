@@ -1,0 +1,6 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Name=HGDGTK
+Exec=hgdgtk
+Terminal=false
