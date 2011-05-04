@@ -5,6 +5,7 @@ using System.IO;
 using System.Threading;
 using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
+using System.Collections;
 
 namespace HGDGTK
 {
@@ -21,14 +22,14 @@ namespace HGDGTK
 			this.percentage_ = percentage;
 			this.filename_ = filename;
 		}
-		
 	}
+	
+	public delegate void HGDConnectedEvent (object sender, EventArgs e);
+	public delegate void HGDDisconnectedEvent (object sender, EventArgs e);
+	
 
 	public class Connection
-	{
-
-		//Log logwin = Log.getLog ();
-
+	{	
 		public TcpClient client { get; set; }
 
 		private Stream stream { get; set; }
@@ -48,6 +49,9 @@ namespace HGDGTK
 		private string password { get; set; }
 		
 		private int port {get; set; }
+		
+		private Queue workQ = new Queue();
+	
 
 		public Connection (string hostname, string username, string password)
 		{
@@ -56,16 +60,9 @@ namespace HGDGTK
 			this.password = password;
 		}
 
-		public void encrypt ()
-		{
-			//stream.
-			//sslStream = new SslStream(stream);
-		}
-
 		public void connect ()
 		{
 			lock (this) {
-				//logwin.logInfo ("trying to connect to: " + hostname);
 				client = new TcpClient (hostname, port);
 				
 				networkStream = client.GetStream ();
@@ -77,36 +74,32 @@ namespace HGDGTK
 				w.NewLine = "\r\n";
 				
 				string x = r.ReadLine ();
-				//logwin.logInfo (x);
+				
+				OnConnected(null);
 			}
 		}
 
 
-
-		public void disconnect ()
-		{
-			lock (this) {
-				
+		//TODO: this won't always clean up nicely
+		private void disconnect ()
+		{			
 				w.WriteLine ("bye");
 				w.Flush ();
 				String s = r.ReadLine ();
-				//logwin.logInfo (s);
 				
-				try {
+				try {					
 					w.Close ();
 				} finally {
-					
 					r.Close ();
 					stream.Close ();
 					client.Close ();
 				}
-			}
 		}
 
-		public void sendFile (string[] filenames)
+		
+		
+		private void int_sendFile (string[] filenames)
 		{
-			
-			
 			lock (this) {
 				
 				foreach (string filename in filenames) {
@@ -241,11 +234,18 @@ namespace HGDGTK
 		}
 
 		public event SendChangedEvent Changed;
+		public event HGDConnectedEvent Connected;
 
 		protected virtual void OnChanged (EventArgs e)
 		{
 			if (Changed != null)
 				Changed (this, e);
+		}
+		
+		protected virtual void OnConnected (EventArgs e)
+		{
+			if (Connected != null)
+				Connected(this, e);
 		}
 	}
 }
